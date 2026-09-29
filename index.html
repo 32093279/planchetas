@@ -185,7 +185,7 @@ details.more summary{cursor:pointer;font-size:14px;color:var(--accent);font-weig
       <p class="note" style="margin-bottom:6px">Buscadas hace poco</p>
       <div class="recents" id="recents"></div>
     </div>
-    <p class="note">Datos en vivo de ARBA (geo.arba.gov.ar) y del servicio de direcciones del Estado Nacional. La plancheta es una copia informativa: para trámites vale la copia oficial que emite ARBA.</p>
+    <p class="note"><b>CartoArba y la información catastral son titularidad de la Provincia de Buenos Aires (ARBA).</b> Planchetas BA es una colaboración gratuita e independiente, sin fines de lucro, que solo facilita la consulta de esos datos públicos (geo.arba.gov.ar) y del servicio de direcciones del Estado Nacional. No representa a ARBA ni reemplaza sus trámites: la plancheta es una copia informativa y para trámites vale la copia oficial que emite ARBA.</p>
   </section>
   <section class="mapwrap">
     <div id="map" aria-label="Mapa catastral"></div>
@@ -508,7 +508,7 @@ function drawPlan(){
    <table class="lst"><thead><tr><th>Parcela</th><th>Partida</th><th>Superficie</th><th>Tipo</th></tr></thead><tbody>
    ${lst.map(p=>`<tr class="${p.properties.cca===pr.cca?"sel":""}"><td>${esc(decode(p.properties.cca).pc||"—")}</td><td>${esc(fmtPda(p.properties.pda))}</td><td>${p.properties.ara1?fmt(p.properties.ara1)+" m²":"—"}</td><td>${esc(p.properties.tpa||"")}</td></tr>`).join("")}
    </tbody></table>
-   <p class="aviso">Documento sin validez oficial. Las medidas y superficies son las que publica ARBA en su cartografía y pueden diferir del título o del plano de mensura. Para trámites, pedí la copia de plancheta oficial en ARBA.</p>`;
+   <p class="aviso">CartoArba y la información catastral son titularidad de la Provincia de Buenos Aires (ARBA); esta copia es una colaboración gratuita e independiente. Documento sin validez oficial. Las medidas y superficies son las que publica ARBA en su cartografía y pueden diferir del título o del plano de mensura. Para trámites, pedí la copia de plancheta oficial en ARBA.</p>`;
 }
 function cmpPc(a,b){const na=parseInt(a)||0,nb=parseInt(b)||0;return na-nb||String(a).localeCompare(String(b))}
 
